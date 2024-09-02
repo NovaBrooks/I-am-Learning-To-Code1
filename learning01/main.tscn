@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6cm7tsb2wxxb"]
+[gd_scene load_steps=8 format=3 uid="uid://b6cm7tsb2wxxb"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_8c54f"]
 [ext_resource type="FontFile" uid="uid://20pxxu81ldpn" path="res://fonts/8bitoperator_jve.ttf" id="1_dr8yw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7sv6"]
@@ -26,12 +27,14 @@ bg_color = Color(0.261122, 0.348641, 0.266329, 1)
 bg_color = Color(0.261122, 0.348641, 0.266329, 1)
 
 [node name="Control" type="Control"]
+modulate = Color(1, 0.864054, 0.980069, 1)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8c54f")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -211,3 +214,14 @@ offset_top = 32.0
 offset_right = 32.0
 offset_bottom = 608.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_l7sv6")
+
+[connection signal="pressed" from="Panel/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Walk" to="." method="_on_walk_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Search" to="." method="_on_search_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Leave" to="." method="_on_leave_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Pick Up" to="." method="_on_pick_up_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Drop Item" to="." method="_on_drop_item_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Talk" to="." method="_on_talk_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Other" to="." method="_on_other_pressed"]
+[connection signal="text_changed" from="Panel2/TextEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="text_set" from="Panel2/TextEdit" to="." method="_on_text_edit_text_set"]
