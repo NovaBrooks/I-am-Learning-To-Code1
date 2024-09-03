@@ -1,30 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6cm7tsb2wxxb"]
+[gd_scene load_steps=6 format=3 uid="uid://b6cm7tsb2wxxb"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_8c54f"]
 [ext_resource type="FontFile" uid="uid://20pxxu81ldpn" path="res://fonts/8bitoperator_jve.ttf" id="1_dr8yw"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7sv6"]
-bg_color = Color(0.52549, 0.627451, 0.486275, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4dtp"]
-bg_color = Color(0.261122, 0.348641, 0.266329, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.410113, 0.502286, 0.374453, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="Shortcut" id="Shortcut_5arhh"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wh31x"]
 bg_color = Color(0.261122, 0.348641, 0.266329, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61f36"]
-bg_color = Color(0.261122, 0.348641, 0.266329, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7sv6"]
+bg_color = Color(0.52549, 0.627451, 0.486275, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05jqk"]
+bg_color = Color(0.394211, 0.50012, 0.378043, 1)
 
 [node name="Control" type="Control"]
 modulate = Color(1, 0.864054, 0.980069, 1)
@@ -36,96 +22,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8c54f")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel2" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 32.0
-offset_right = 224.0
-offset_bottom = 640.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_l7sv6")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
-z_index = 1
-offset_left = 8.0
-offset_right = 184.0
-offset_bottom = 576.0
-theme_override_constants/separation = 24
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.713726, 0.831373, 0.717647, 1)
-theme_override_fonts/font = ExtResource("1_dr8yw")
-theme_override_font_sizes/font_size = 32
-text = "Command List"
-horizontal_alignment = 1
-
-[node name="Start" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.713726, 0.831373, 0.717647, 1)
-theme_override_fonts/font = ExtResource("1_dr8yw")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_j4dtp")
-shortcut = SubResource("Shortcut_5arhh")
-text = "Start"
-
-[node name="Walk" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.713726, 0.831373, 0.717647, 1)
-theme_override_fonts/font = ExtResource("1_dr8yw")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_j4dtp")
-text = "Walk"
-
-[node name="Search" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.713726, 0.831373, 0.717647, 1)
-theme_override_fonts/font = ExtResource("1_dr8yw")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_j4dtp")
-text = "Search"
-
-[node name="Leave" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.713726, 0.831373, 0.717647, 1)
-theme_override_fonts/font = ExtResource("1_dr8yw")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_j4dtp")
-text = "Leave"
-
-[node name="Pick Up" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.713726, 0.831373, 0.717647, 1)
-theme_override_fonts/font = ExtResource("1_dr8yw")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_j4dtp")
-text = "Pick Up"
-
-[node name="Drop Item" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.713726, 0.831373, 0.717647, 1)
-theme_override_fonts/font = ExtResource("1_dr8yw")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_j4dtp")
-text = "Drop Item"
-
-[node name="Talk" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.713726, 0.831373, 0.717647, 1)
-theme_override_fonts/font = ExtResource("1_dr8yw")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_j4dtp")
-text = "Talk"
-
-[node name="Other" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.713726, 0.831373, 0.717647, 1)
-theme_override_fonts/font = ExtResource("1_dr8yw")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_j4dtp")
-text = "Other"
-
-[node name="Panel2" type="Panel" parent="."]
-offset_left = 240.0
 offset_top = 32.0
 offset_right = 1000.0
 offset_bottom = 640.0
@@ -134,8 +33,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_wh31x")
 [node name="Panel3" type="Panel" parent="Panel2"]
 modulate = Color(0.873298, 0.873298, 0.873298, 1)
 layout_mode = 0
-offset_left = 16.0
-offset_right = 760.0
+offset_right = 968.0
 offset_bottom = 64.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_l7sv6")
 
@@ -143,7 +41,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_l7sv6")
 layout_mode = 0
 offset_left = 16.0
 offset_top = 24.0
-offset_right = 712.0
+offset_right = 904.0
 offset_bottom = 576.0
 
 [node name="Label" type="Label" parent="Panel2/VBoxContainer"]
@@ -154,48 +52,32 @@ theme_override_font_sizes/font_size = 32
 text = "Phantom Souls [Text RPG]"
 horizontal_alignment = 1
 
-[node name="TextEdit" type="TextEdit" parent="Panel2"]
-layout_mode = 2
-offset_left = 24.0
-offset_top = 496.0
-offset_right = 704.0
-offset_bottom = 576.0
-theme_override_colors/font_color = Color(0.643137, 0.47451, 0.560784, 1)
-theme_override_fonts/font = ExtResource("1_dr8yw")
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_61f36")
-placeholder_text = " > Press a command or \"Other\" and type the secret
- commands"
-
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel2"]
 layout_mode = 0
-offset_left = 24.0
+offset_left = 8.0
 offset_top = 72.0
-offset_right = 704.0
+offset_right = 912.0
 offset_bottom = 480.0
 theme_override_fonts/normal_font = ExtResource("1_dr8yw")
 theme_override_font_sizes/normal_font_size = 32
 text = "*Welcome to the game
 
-*Please Enter your [Name]"
+*Please Enter your [Name]
+
+(to start the game, or get help, start with \"/help\" or \"/name_player\")"
+metadata/text = ""
 
 [node name="Panel4" type="Panel" parent="."]
 modulate = Color(0.873298, 0.873298, 0.873298, 1)
+layout_mode = 0
 offset_top = 608.0
 offset_right = 1000.0
 offset_bottom = 640.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_l7sv6")
 
-[node name="Panel3" type="Panel" parent="."]
-modulate = Color(0.873298, 0.873298, 0.873298, 1)
-offset_left = 224.0
-offset_top = 32.0
-offset_right = 256.0
-offset_bottom = 608.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_l7sv6")
-
 [node name="Panel5" type="Panel" parent="."]
 modulate = Color(0.873298, 0.873298, 0.873298, 1)
+layout_mode = 0
 offset_left = 952.0
 offset_top = 96.0
 offset_right = 1000.0
@@ -204,24 +86,28 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_l7sv6")
 
 [node name="Panel6" type="Panel" parent="."]
 modulate = Color(0.728821, 0.728822, 0.728822, 1)
+layout_mode = 0
 offset_right = 1000.0
 offset_bottom = 32.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_l7sv6")
 
 [node name="Panel7" type="Panel" parent="."]
 modulate = Color(0.873298, 0.873298, 0.873298, 1)
+layout_mode = 0
 offset_top = 32.0
 offset_right = 32.0
 offset_bottom = 608.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_l7sv6")
 
-[connection signal="pressed" from="Panel/VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Walk" to="." method="_on_walk_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Search" to="." method="_on_search_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Leave" to="." method="_on_leave_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Pick Up" to="." method="_on_pick_up_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Drop Item" to="." method="_on_drop_item_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Talk" to="." method="_on_talk_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Other" to="." method="_on_other_pressed"]
-[connection signal="text_changed" from="Panel2/TextEdit" to="." method="_on_text_edit_text_changed"]
-[connection signal="text_set" from="Panel2/TextEdit" to="." method="_on_text_edit_text_set"]
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 568.0
+offset_right = 952.0
+offset_bottom = 608.0
+theme_override_fonts/font = ExtResource("1_dr8yw")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_05jqk")
+placeholder_text = " > Type a command! with \"/ \" then the command! use /help to know more!"
+
+[connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]

@@ -1,54 +1,25 @@
 extends Control
 
 @onready var text_history = $Panel2/VBoxContainer/Label
-@onready var new_text = $Panel2/TextEdit
-
-
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	str(new_text)
-	str(text_history)
-
+	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if Input.is_action_just_pressed("enter"):
-		pass
-
-func _on_start_pressed():
-	pass # Replace with function body.
-
-
-func _on_walk_pressed():
-	pass # Replace with function body.
-
-
-func _on_search_pressed():
-	pass # Replace with function body.
-
-
-func _on_leave_pressed():
-	pass # Replace with function body.
-
-
-func _on_pick_up_pressed():
-	pass # Replace with function body.
-
-
-func _on_drop_item_pressed():
-	pass # Replace with function body.
-
-
-func _on_talk_pressed():
-	pass # Replace with function body.
-
-
-func _on_other_pressed():
-	pass # Replace with function body.
-
-func _on_text_edit_text_set():
 	pass
 
-func _on_text_edit_text_changed():
-	pass
+func _on_line_edit_text_submitted(new_text):
+	var _text_historystr = str(text_history)
+
+	
+	if new_text == "/help":
+		print("command /help typed")
+	elif new_text == "/name_player":
+		print("start to name the player")
+	elif new_text == "/search_room":
+		print("you look around the room")
+	elif new_text == "/end_game":
+		get_tree().quit()
+	else: 
+		print("thats not a command")
