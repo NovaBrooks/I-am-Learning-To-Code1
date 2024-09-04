@@ -12,26 +12,47 @@ func _process(_delta):
 
 func _on_line_edit_text_submitted(new_text):
 	var _text_historystr = str(text_history)
+	var searched_room = false
 	
-	
-	if new_text == "/help":
+	if new_text == "help":
 		text_edit.clear()
-		print("command /help typed")
 		
-		text_history.text =text_history.text + "\n\n/help command used\n\nList of commands:\n/help\n/name_player\n/search_room\n/end_game\n" 
+		text_history.text =text_history.text + "\n\n/help command used\n\nList of commands:\nhelp\nname player\nsearch room\nend game\nlook at\npick up" 
+		text_edit.clear()
 		
-		
-	elif new_text == "/name_player":
+	elif new_text == "/name player":
 		text_edit.clear()
 		print("start to name the player")
-		if new_text == "noah":
-			print("welcome dev")
-	elif new_text == "/search_room":
+	elif new_text == "search room":
 		text_edit.clear()
 		print("you look around the room")
-	elif new_text == "/end_game":
+	elif new_text == "end game":
 		text_edit.clear()
 		get_tree().quit()
+	elif new_text == "look at":
+		text_history.text =text_history.text + "\n\nyou look, but there is nothing in your hand...\n\n(use \"pick up\" to hold an item in your hand)"
+		text_edit.clear()
+	elif new_text == "look north":
+		text_history.text = text_history.text + "\n\nyou look north"
+		text_edit.clear()
+	elif new_text == "look south":
+		text_history.text = text_history.text + "\n\nyou look south"
+		text_edit.clear()
+	elif new_text == "look east":
+		text_history.text = text_history.text + "\n\nyou look east"
+		text_edit.clear()
+	elif new_text == "look west":
+		text_history.text = text_history.text + "\n\nyou look west"
+		text_edit.clear()
+	elif new_text == "pick up" && searched_room == true:
+		text_history.text =text_history.text + "\n\nyou reach out, but there is nothing to grab as you havent \"searched\" \n\n(use the search before using pick up items nearby)"
+		text_edit.clear()
+	elif new_text == "search":
+		searched_room = true
+		text_history.text =text_history.text + "\n\nyou look around the room and find some items\n\nyou find a \nbook\ncandle\ncandle\nstick\na deck of playing cards"
+		text_edit.clear()
+		print(searched_room)
+	
 	else: 
 		text_edit.clear()
-		print("thats not a command")
+		text_history.text =text_history.text + "\n\nthat is not a command\n\nif you need help,\"help\"will help you with a list of commands! "
